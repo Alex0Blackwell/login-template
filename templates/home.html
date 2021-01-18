@@ -21,16 +21,16 @@
           <fieldset>
             <legend>Please, enter your email and password for login.</legend>
             <div class="input-block">
-              <label for="email">E-mail</label>
+              <label for="email">E-mail:</label>
               <input id="login-email" name="email" type="email" required>
             </div>
             <div class="input-block">
-              <label for="password">Password</label>
+              <label for="password">Password:</label>
               <input id="login-password" name="password" type="password" required>
             </div>
           </fieldset>
           <p class="error error--hidden"></p>
-          <input type="submit" value="Log In">
+          <input class="login-btn" type="submit" value="Log In">
         </form>
 
       </div>
@@ -45,92 +45,24 @@
             <legend>Please, enter your email, password and password confirmation for sign up.</legend>
 
             <div class="input-block">
-                <label for="name">Username</label>
+                <label for="name">Username:</label>
                 <input type="text" name="name" class="field" required>
             </div>
             <div class="input-block">
-              <label for="email">E-mail</label>
+              <label for="email">E-mail:</label>
               <input id="signup-email" name="email" type="email" required>
             </div>
             <div class="input-block">
-              <label for="password">Password</label>
+              <label for="password">Password:</label>
               <input id="signup-password" name="password" type="password" required>
             </div>
           </fieldset>
           <p class="error error--hidden"></p>
-          <input type="submit" value="Sign up">
+          <input  class="login-btn" type="submit" value="Sign up">
         </form>
 
       </div>
     </div>
   </div>
-    <!-- <div class="container">
-
-
-      <div class="col-12">
-        <div class="login-card">
-          <h3 class="text-center">Create an Account</h3>
-          <form name="signup_form">
-            <div class="text-right">
-
-              <label for="name">Name</label>
-              <input type="text" name="name" class="field" required>
-
-              <label for="name">Email</label>
-              <input type="text" name="email" class="field" required>
-
-              <label for="name">Password</label>
-              <input type="text" name="password" class="field" required>
-
-
-            </div>
-            <div class="text-center">
-              <p class="error error--hidden"></p>
-
-              <input type="submit" value="Sign Up">
-
-            </div>
-          </form>
-
-        </div>
-      </div>
-
-
-      <div class="col-lg-2 col-md-3 col-12 login-card">
-        <h3>Login</h3>
-        <form name="login_form">
-
-          <label for="name">Email</label>
-          <input type="text" name="email" class="field" required>
-
-          <label for="name">Password</label>
-          <input type="text" name="password" class="field" required>
-
-          <p class="error error--hidden"></p>
-
-          <input type="submit" value="Log In">
-        </form>
-      </div>
-
-    </div> -->
-
-  <!-- <div>
-    <h1>Login</h1>
-
-    <form name="login_form">
-
-      <label for="name">Email</label>
-      <input type="text" name="email" class="field" required>
-
-      <label for="name">Password</label>
-      <input type="text" name="password" class="field" required>
-
-      <p class="error error--hidden"></p>
-
-      <input type="submit" value="Log In">
-
-    </form>
-
-  </div> -->
 
 {% endblock %}
