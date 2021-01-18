@@ -13,6 +13,13 @@ def signup():
     return User().signup()
 
 
+# The login method of user/models.py > User class
+# Take in data as a post request
+@app.route('/user/login', methods=['POST'])
+def login():
+    # Instatiate and invoke
+    return User().login()
+
 # The signout method of user/models.py > User class
 @app.route('/user/signout')
 def signout():

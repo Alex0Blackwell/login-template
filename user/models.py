@@ -50,6 +50,23 @@ class User:
         return jsonify({"Error", "Signup failure"}), 400
 
 
+    # Method for logging in users
+    def login(self):
+        # Find a user with this email address
+        user = db.users.find_one({
+            "email": request.form.get("email")
+        })
+
+
+        # If user exists and unencrypted password matches encrypted password
+        if(user and pbkdf2_sha256.verify(request.form.get('password'), user['password'])):
+            return self.start_session(user)
+
+        # Invalid credentials, send an error code of 401
+        return jsonify({"error": "Username or password are incorrect."}), 401
+
+
+
     def signout(self):
         # Clear the session and sign the user out
         session.clear()
