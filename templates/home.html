@@ -1,34 +1,67 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Home</h1>
 
-  <div>
-    <h1>Create an Account</h1>
-
-    <form name="signup_form">
-
-      <label for="name">Name</label>
-      <input type="text" name="name" class="field" required>
-
-      <label for="name">Email</label>
-      <input type="text" name="email" class="field" required>
-
-      <label for="name">Password</label>
-      <input type="text" name="password" class="field" required>
-
-      <p class="error error--hidden"></p>
-
-      <input type="submit" value="Sign Up">
-
-    </form>
-
+  <div class="container">
+    <div class="text-center">
+      <h1>Home</h1>
+    </div>
   </div>
 
-  <div>
+    <div class="container">
+
+
+      <div class="col-12">
+        <div class="login-card">
+          <h3 class="text-center">Create an Account</h3>
+          <form name="signup_form">
+            <div class="text-right">
+
+              <label for="name">Name</label>
+              <input type="text" name="name" class="field" required>
+
+              <label for="name">Email</label>
+              <input type="text" name="email" class="field" required>
+
+              <label for="name">Password</label>
+              <input type="text" name="password" class="field" required>
+
+
+            </div>
+            <div class="text-center">
+              <p class="error error--hidden"></p>
+
+              <input type="submit" value="Sign Up">
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-2 col-md-3 col-12 login-card">
+        <h3>Login</h3>
+        <!-- The form name needs to change to be referenced by jQuery -->
+        <form name="login_form">
+
+          <label for="name">Email</label>
+          <input type="text" name="email" class="field" required>
+
+          <label for="name">Password</label>
+          <input type="text" name="password" class="field" required>
+
+          <p class="error error--hidden"></p>
+
+          <input type="submit" value="Log In">
+        </form>
+      </div>
+
+    </div>
+
+  <!-- <div>
     <h1>Login</h1>
 
-    <!-- The form name needs to change to be referenced by jQuery -->
     <form name="login_form">
 
       <label for="name">Email</label>
@@ -43,6 +76,6 @@
 
     </form>
 
-  </div>
+  </div> -->
 
 {% endblock %}
