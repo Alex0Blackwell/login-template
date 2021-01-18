@@ -24,8 +24,14 @@ class User:
         # We want to encrypt the password so we don't store in plain text
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        # Now save this data into mongodb
-        db.users.insert_one(user)
+        # Let's check for an existing email address. Then we don't want to add it
+        if(db.users.find_one({"email": user['email']})):
+            # Send an error message through ajax to main.js (frontend), status code 400 for failure
+            return jsonify({"error": "Email address already in use"}), 400
 
+        # Now save this data into mongodb and return user if successful
+        if(db.users.insert_one(user))
+            return jsonify(user), 200
 
-        return jsonify(user), 200
+        # Something went wrong, throw an error
+        return jsonify({"Error", "Signup failure"}), 400
