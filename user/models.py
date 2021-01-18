@@ -41,6 +41,10 @@ class User:
             # Send an error message through ajax to main.js (frontend), status code 400 for failure
             return jsonify({"error": "Email address already in use"}), 400
 
+        # Let's also check for an existing username. Then we don't want to add it
+        if(db.users.find_one({"name": user['name']})):
+            return jsonify({"error": "Username is already in use"}), 400
+
         # Now save this data into mongodb and start user session if successfull
         if(db.users.insert_one(user)):
             # Pass in user method including id, name, email, and password
