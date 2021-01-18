@@ -6,6 +6,15 @@ from app import app
 from user.models import User
 
 
+# The signup method that takes in data as a post request
 @app.route('/user/signup', methods=['POST'])
 def signup():
+    # Instatiate and invoke
     return User().signup()
+
+
+# The signout method of user/models.py > User class
+@app.route('/user/signout')
+def signout():
+    # Instatiate and invoke
+    return User().signout()
